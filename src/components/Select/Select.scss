@@ -1,0 +1,100 @@
+// Variables de estilo
+$primary-color: #4caf50;
+$secondary-color: #ffffff;
+$border-color: #ddd;
+$focus-color: #3f8c3f;
+$hover-bg-color: #f1f1f1;
+$shadow-color: rgba(0, 0, 0, 0.1);
+$transition-time: 0.3s;
+$font-color: #333;
+$placeholder-color: #aaa;
+$select-padding: 12px 16px;
+$select-font-size: 1rem;
+$border-radius: 8px;
+
+// Estilos básicos del select
+.select {
+  position: relative;  // Para posicionar correctamente el ícono de la flecha
+  display: inline-block;
+  width: 100%;
+  padding: $select-padding;
+  font-size: $select-font-size;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  background-color: $secondary-color;
+  color: $font-color;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  box-shadow: 0 2px 4px $shadow-color;
+  transition: border-color $transition-time ease, box-shadow $transition-time ease, background-color $transition-time ease;
+
+  &:focus {
+    border-color: $focus-color;
+    box-shadow: 0 0 6px $focus-color;
+    outline: none;
+  }
+
+  &:hover {
+    background-color: $hover-bg-color;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 6px solid transparent;
+    border-top-color: $font-color;
+  }
+
+  &::placeholder {
+    color: $placeholder-color;
+  }
+
+  option {
+    padding: 10px;
+    background-color: $secondary-color;
+    color: $font-color;
+    border: none;
+    transition: background-color $transition-time ease;
+
+    &:hover {
+      background-color: $hover-bg-color;
+    }
+  }
+}
+
+.select.disabled {
+  background-color: #f0f0f0;
+  border-color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+@media (max-width: 1024px) {
+  .select {
+    font-size: 0.95rem;
+    padding: 10px 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .select {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+
+  .select::after {
+    right: 12px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .select {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+  }
+}

@@ -1,0 +1,211 @@
+$primary-color: #2c3e50;  
+$accent-color: #f39c12;   
+$background-color: #ecf0f1; 
+$button-hover-color: #e67e22; 
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: $background-color;
+    margin: 0;
+    padding: 0;
+    color: $primary-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: $primary-color;
+    margin-bottom: 2rem;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.shopping-cart-page-product {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-wrap: wrap;
+
+    &:hover {
+        transform: scale(1.02);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .shopping-cart-page-product-image {
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
+        border-radius: 8px;
+        margin-right: 20px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        &:hover img {
+            transform: scale(1.05);
+        }
+    }
+
+    .shopping-cart-page-product-desc {
+        flex: 1;
+        font-size: 1rem;
+        color: #7f8c8d;
+        padding-right: 20px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .shopping-cart-page-product-price {
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: $primary-color;
+    }
+
+    .shopping-cart-page-product-btn {
+        margin-top: 1rem;
+    }
+}
+
+.dark {
+    background-color: $primary-color;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+        background-color: $button-hover-color;
+        transform: scale(1.05);
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 5px $accent-color;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1024px) {
+    body {
+        padding: 1rem;
+    }
+
+    .shopping-cart-page-product {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .shopping-cart-page-product-image {
+        width: 120px;
+        height: 120px;
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    .shopping-cart-page-product-desc {
+        font-size: 0.9rem;
+        text-align: center;
+        padding-right: 0;
+    }
+
+    .shopping-cart-page-product-price {
+        font-size: 1.15rem;
+    }
+
+    .dark {
+        width: 100%;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .shopping-cart-page-product {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .shopping-cart-page-product-image {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 1rem;
+    }
+
+    .shopping-cart-page-product-desc {
+        font-size: 0.85rem;
+        text-align: center;
+    }
+
+    .shopping-cart-page-product-price {
+        font-size: 1rem;
+    }
+
+    .dark {
+        width: 100%;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .shopping-cart-page-product {
+        padding: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .shopping-cart-page-product-image {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 1rem;
+    }
+
+    .shopping-cart-page-product-desc {
+        font-size: 0.8rem;
+        text-align: center;
+    }
+
+    .shopping-cart-page-product-price {
+        font-size: 0.9rem;
+    }
+
+    .dark {
+        width: 100%;
+        padding: 8px 18px;
+        font-size: 0.9rem;
+    }
+}

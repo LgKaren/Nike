@@ -1,0 +1,53 @@
+$primary-color: #af894c;
+$secondary-color: #ffffff;
+$hover-bg-color: #e0e0e0;
+$focus-color: #8c693f;
+$shadow-color: rgba(0, 0, 0, 0.1);
+$font-color: #333;
+$transition-time: 0.3s;
+$border-radius: 20px;
+
+.tag {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: $border-radius;
+  text-transform: capitalize;
+  box-shadow: 0 2px 4px $shadow-color;
+  transition: background-color $transition-time ease, box-shadow $transition-time ease, transform $transition-time ease;
+  
+  &:hover {
+    background-color: $hover-bg-color;
+    transform: translateY(-2px);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 8px $focus-color;
+  }
+
+  color: $font-color;
+
+  border: 1px solid transparent;
+
+  &.default {
+    background-color: $primary-color;
+    color: $secondary-color;
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 0.8rem;
+    padding: 7px 14px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.75rem;
+    padding: 6px 12px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.7rem;
+    padding: 5px 10px;
+  }
+}

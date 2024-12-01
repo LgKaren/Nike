@@ -1,0 +1,132 @@
+$primary-color: #edce7b; 
+$secondary-color: #ffffff;
+$bg-color: #333333dd;
+$hover-bg-color: #444;
+$shadow-color: rgba(0, 0, 0, 0.1);
+$transition-time: 0.3s;
+$font-color: #f1f1f1;
+$logo-height: 50px;
+
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;  
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: transparent;
+    transition: background-color $transition-time ease;
+
+    &.scrolled {
+        background: $bg-color;
+    }
+
+    > a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: $logo-height;
+
+        img {
+            height: 70%;
+            width: auto;
+            border-radius: 5px;
+        }
+    }
+
+    .menu,
+    .nav-utils {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+}
+
+.menu a,
+.nav-utils a {
+    color: $font-color;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: background-color $transition-time ease, color $transition-time ease;
+
+    &:hover {
+        background-color: $hover-bg-color;
+        color: $primary-color;
+    }
+
+    &.active {
+        background-color: $primary-color;
+        color: $secondary-color;
+    }
+}
+
+@media (max-width: 1024px) {
+    .nav-bar {
+        padding: 10px 15px;  
+    }
+
+    .menu,
+    .nav-utils {
+        gap: 15px; 
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-bar {
+        flex-direction: column;  
+        align-items: flex-start;  
+        padding: 20px 10px;
+
+        > a {
+            margin-bottom: 15px;
+        }
+
+        .menu,
+        .nav-utils {
+            flex-direction: column;  
+            gap: 10px; 
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-bar {
+        padding: 15px 5px;  
+    }
+
+    .menu a,
+    .nav-utils a {
+        font-size: 0.9rem;  
+        padding: 6px 10px; 
+    }
+}
+
+.man-page {
+    .video-container {
+        position: absolute; 
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -1;
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;  
+        }
+    }
+
+    .content {
+        position: relative;
+        z-index: 1; 
+        margin-top: 80px; 
+        padding: 10px; 
+    }
+}
