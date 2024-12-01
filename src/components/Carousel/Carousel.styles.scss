@@ -1,11 +1,10 @@
 $primary-color: #ffffff;
 $secondary-color: #ffffff;
-$bg-color: #f9f9f9;
 $text-color: #333;
 $shadow-color: rgba(0, 0, 0, 0.2);
 
 .carousel {
-    background-color: $bg-color;
+    background-color:rgba(0, 0, 0, 0.1);;
     border-radius: 10px;
     box-shadow: 0 4px 8px $shadow-color;
     padding: 20px;
